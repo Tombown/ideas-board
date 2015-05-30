@@ -1,0 +1,36 @@
+html {
+	overflow-y:scroll;
+}
+
+body {
+	padding-top:50px;
+}
+
+#idea-list {
+	margin-bottom:30px;
+}
+
+/*Idea cards*/
+
+.idea-card {
+	border: 1px #dfdfdf solid;
+}
+
+/*Button*/
+
+.btn-position {
+	float: right;
+}
+
+/*Labels*/
+
+label.ng-binding {
+	width: 100%;
+	padding-top: 15px;
+}
+
+/*Forms*/
+
+.form-content {
+	padding: 15px;
+}

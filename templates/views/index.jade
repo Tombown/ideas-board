@@ -1,0 +1,15 @@
+include ../layouts/default
+
+body(ng-controller='mainController')
+	.container-fluid
+		//- HEADER AND IDEA COUNT
+		.jumbotron.text-center
+			h1
+				| Ideas total 
+				span.label.label-info {{ ideas.length }}
+		#idea-list.row
+			.col-sm-12.clearfix
+				//- FORM TO CREATE IDEAS
+				include form
+				//- IDEAS LIST
+				include ideas
