@@ -1,5 +1,6 @@
 //- LOOP OVER THE IDEAS IN $scope.ideas
 .input(ng-repeat='idea in ideas').col-sm-4.idea-card.element
 	label
-		|	{{ idea.text }}
-	input(type='button', value='Delete', class='btn-danger btn-position' ng-click='deleteIdea(idea._id)')
+		|	{{ idea.title }}
+		|	{{ idea.description }}
+	input.btn-danger.btn-position.delete-form-btn(type='button', value='Delete', ng-click='deleteIdea(idea._id)')

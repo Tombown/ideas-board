@@ -16,10 +16,14 @@ body {
 	border: 1px #dfdfdf solid;
 }
 
-/*Button*/
+/*Buttons*/
 
-.btn-position {
+.delete-form-btn {
 	float: right;
+}
+
+.idea-form-btn {
+	width: 100%;
 }
 
 /*Labels*/

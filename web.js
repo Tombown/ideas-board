@@ -22,7 +22,8 @@ app.use(methodOverride());
 
  // define model =================
     var Idea = mongoose.model('Idea', {
-        text : String
+        title : String,
+        description : String
     });
 
 // routes ======================================================================
@@ -45,9 +46,10 @@ app.use(methodOverride());
     // create idea and send back all ideas after creation
     app.post('/api/ideas', function(req, res) {
 
-        // create a idea, information comes from AJAX request from Angular
+        // create an idea, information comes from AJAX request from Angular
         Idea.create({
-            text : req.body.text,
+            title : req.body.title,
+            description : req.body.description,
             done : false
         }, function(err, idea) {
             if (err)
