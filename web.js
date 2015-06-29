@@ -6,10 +6,10 @@ var morgan = require('morgan');             // log requests to the console (expr
 var bodyParser = require('body-parser');    // pull information from HTML POST (express4)
 var methodOverride = require('method-override'); // simulate DELETE and PUT (express4)
 var validate = require("validate.js"); // error validator on idea input
+var db = mongoose.connect('localhost:27017');
 
 // configuration =================
 
-mongoose.connect('localhost:27017');     // connect to mongoDB database on modulus.io
 
 app.use(express.static(__dirname + '/public'));                 // set the static files location /public/img will be /img for users
 app.set('views', __dirname + '/templates/');
@@ -22,9 +22,14 @@ app.use(methodOverride());
 
  // define model =================
     var Idea = mongoose.model('Idea', {
-        title : String,
-        description : String
+        title : String, 
+        description : String,
+        comment : String, 
     });
+
+    // var Like = mongoose.model('Like', {
+    //     like : String, 
+    // });
 
 // routes ======================================================================
 
@@ -64,6 +69,28 @@ app.use(methodOverride());
         });
 
     });
+
+    // Add a comment
+
+    app.post('/api/ideas/:idea_id', function(req, res) {
+
+        // create a comment, information comes from AJAX request from Angular
+        Idea.update({
+            comment : req.body.comment,
+            done : false
+        }, function(err, idea) {
+            if (err)
+                res.send(err);
+
+            // get and return all comments after you create another
+            Idea.find(function(err, ideas) {
+                if (err)
+                    res.send(err)
+                res.json(ideas);
+            });
+        });
+
+    });    
 
     // delete a idea
     app.delete('/api/ideas/:idea_id', function(req, res) {
