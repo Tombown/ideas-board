@@ -2,18 +2,25 @@ html {
 	overflow-y:scroll;
 }
 
-body {
-	padding-top:50px;
-}
-
 #idea-list {
 	margin-bottom:30px;
 }
 
+/*Idea form*/
+
 /*Idea cards*/
 
-.idea-card {
+.card-container {
+	padding: 10px
+}
+
+.card {
 	border: 1px #dfdfdf solid;
+	padding: 0 15px 15px;
+}
+
+.card-container:nth-child(3n+1) {
+	clear:both;
 }
 
 /*Buttons*/
@@ -22,8 +29,12 @@ body {
 	float: right;
 }
 
-.idea-form-btn {
+.form-btn {
 	width: 100%;
+}
+
+button.close {
+	margin-top: 8px;
 }
 
 /*Labels*/
@@ -36,5 +47,13 @@ label.ng-binding {
 /*Forms*/
 
 .form-content {
-	padding: 15px;
+
+}
+
+/*General content*/
+
+.border-bottom {
+	padding-bottom: 9px;
+	margin: 0 0 20px;
+	border-bottom: 1px solid #eee;
 }

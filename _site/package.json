@@ -1,0 +1,16 @@
+{
+  "name": "idea-voting-cards",
+  "version": "0.0.0",
+  "description": "Simple card based voting app.",
+  "main": "web.js",
+  "author": "Tom Bown",
+  "dependencies": {
+    "body-parser": "~1.5.2",
+    "express": "~4.7.2",
+    "jade": "^1.10.0",
+    "method-override": "~2.1.2",
+    "mongoose": "~3.6.2",
+    "morgan": "~1.2.2",
+    "validate.js": "^0.7.1"
+  }
+}

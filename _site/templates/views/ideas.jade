@@ -1,0 +1,15 @@
+//- LOOP OVER THE IDEAS IN $scope.ideas
+.input(ng-repeat='idea in ideas').col-sm-4.idea-card.element
+	button.close(type='button', aria-label='Close', ng-click='deleteIdea(idea._id)')
+		span(aria-hidden='true') &times;
+	.title.page-header
+		h3 {{ idea.title }}
+	.description.border-bottom
+		p {{ idea.description }}
+	label.control-label
+		|	Comment 
+	textarea.form-control(type='text', id='inputLike', rows="3", ng-model='formData.like', required)
+	.form-group.text-center
+			button.btn.btn-primary.btn-lg.idea-form-btn(type='submit', ng-click='createLike(idea._id)') Add
+	p {{ idea.like }}
+	input.btn-danger.btn-position.delete-form-btn(type='button', value='Delete', ng-click='deleteIdea(idea._id)')

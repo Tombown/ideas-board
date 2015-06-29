@@ -1,0 +1,13 @@
+#idea-form
+	form.col-sm-4.idea-card.form-content(role="form", data-toggle="validator", novalidate="true")
+		.form-group
+			label.control-label
+				|	Idea title
+			input.form-control.input-lg.text-center(type='text', id='inputIdea', placeholder='What is your idea?', ng-model='formData.title' required)
+			.help-block.with-errors
+			label.control-label
+				|	Idea description
+			textarea.form-control(type='text', id='inputDescription', rows="3", ng-model='formData.description' required)
+		.form-group.text-center
+			button.btn.btn-primary.btn-lg.idea-form-btn(type='submit', ng-click='createIdea()') Add
+		.help-block.with-errors

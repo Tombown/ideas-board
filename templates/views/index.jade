@@ -3,9 +3,15 @@ include ../layouts/default
 body(ng-controller='mainController')
 	.container-fluid
 		//- HEADER AND IDEA COUNT
-		.jumbotron.text-center
-			h1
-				| Ideas total 
+		.jumbotron
+			H1
+				| Welcome to the ideas board! 
+			p
+				| A mind dump for ideas you have for the consumer site that you just need to get out, with minimum fuss.
+
+				| Add at will, and each idea will be reviewed by members of the Product Team.
+			h2
+				| Total ideas so far 
 				span.label.label-info {{ ideas.length }}
 		#idea-list.row
 			.col-sm-12.clearfix
